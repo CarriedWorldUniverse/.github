@@ -17,9 +17,10 @@ We build the substrate for a small team of specialized AI personalities ("aspect
 | [**agora**](https://github.com/CarriedWorldUniverse/agora) | Operator's terminal TUI on the bus | Go |
 | [**acp-claude-pty**](https://github.com/CarriedWorldUniverse/acp-claude-pty) | PTY driver + ACP server for the Claude CLI | Go |
 | [**interchange**](https://github.com/CarriedWorldUniverse/interchange) | E2E-encrypted Frame-to-Frame relay | Go |
+| [**cairn**](https://github.com/CarriedWorldUniverse/cairn) | Agent-native git platform — long-term divergent fork of Forgejo | Go |
 | [**casket-go**](https://github.com/CarriedWorldUniverse/casket-go) / [**-ts**](https://github.com/CarriedWorldUniverse/casket-ts) / [**-dotnet**](https://github.com/CarriedWorldUniverse/casket-dotnet) | Ed25519 + AEAD channel identity, cross-language wire-compatible | Go / TS / C# |
 
-Every public repo has CI matrices, tag-driven releases via goreleaser, branch-protected `main` with required status checks, and Apache-2.0 license.
+Every public repo has CI matrices, tag-driven releases via goreleaser, branch-protected trunk with required status checks, and Apache-2.0 license. Cairn is the exception — Forgejo-derived, AGPL-3.0.
 
 ## How it fits together
 
