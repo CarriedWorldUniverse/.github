@@ -19,14 +19,14 @@ We build the substrate for a small team of specialized AI personalities ("aspect
 | [**interchange**](https://github.com/CarriedWorldUniverse/interchange) | E2E-encrypted Frame-to-Frame relay | Go |
 | [**herald**](https://github.com/CarriedWorldUniverse/herald) | CWB identity service for humans and agents; OIDC + casket-rooted assertions | Go |
 | [**ledger**](https://github.com/CarriedWorldUniverse/ledger) | Aspect-first issue tracker and authority/audit surface | Go |
-| [**cairn**](https://github.com/CarriedWorldUniverse/cairn) | Agent-native git platform — long-term divergent fork of Forgejo | Go |
+| [**cairn**](https://github.com/CarriedWorldUniverse/cairn) | Agent-native git platform — go-git core, Forgejo lineage (AGPL) | Go |
 | [**cw**](https://github.com/CarriedWorldUniverse/cw) / [**cwb-client**](https://github.com/CarriedWorldUniverse/cwb-client) / [**cwb-proto**](https://github.com/CarriedWorldUniverse/cwb-proto) | CWB CLI, reusable client, and protocol definitions | Go / proto |
 | [**nexus-platform**](https://github.com/CarriedWorldUniverse/nexus-platform) | Umbrella distribution repo for the deployable bundle | Go |
 | [**lynxai**](https://github.com/CarriedWorldUniverse/lynxai) | Self-hostable AI-native headless browser | Go |
 | [**vessel**](https://github.com/CarriedWorldUniverse/vessel) | Desktop avatar/voice shell for LLM backends | — |
 | [**casket-go**](https://github.com/CarriedWorldUniverse/casket-go) / [**-ts**](https://github.com/CarriedWorldUniverse/casket-ts) / [**-dotnet**](https://github.com/CarriedWorldUniverse/casket-dotnet) | Ed25519 + AEAD channel identity, cross-language wire-compatible | Go / TS / C# |
 
-Most public repos have CI matrices, tag-driven releases, branch-protected trunk with required status checks, and Apache-2.0 license. Forgejo-derived or browser-runtime repos can differ: `cairn` and `lynxai` are AGPL-3.0.
+Most public repos have CI matrices, tag-driven releases, branch-protected trunk with required status checks, and Apache-2.0 license. A couple differ on license: `cairn` and `lynxai` are AGPL-3.0.
 
 ## How it fits together
 
