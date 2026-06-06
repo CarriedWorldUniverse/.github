@@ -13,6 +13,6 @@
 - Do not push to `main` directly. Open a PR; let CI gate it.
 
 ## Cross-repo changes
-- A change that needs a dependency updated (a new proto RPC, a shared-lib API) lands in the **upstream repo first** (proto/lib), which is tagged/bumped; then the consumer bumps its dependency.
-- **Never vendor a dependency + `replace` it** in the consumer to sneak in an unreleased change — that forks the source of truth. (Lesson from herald NEX-475: a builder scoped to one repo vendored cwb-proto; the fix was to land the RPCs upstream first.)
-- A dispatched builder is scoped to one repo, so cross-repo work must either land the dependency first or be coordinated across repos by the operator/shadow.
+- A change that needs a dependency updated (a new proto RPC, a shared-lib API) lands in the **upstream repo first** (tagged/bumped), then the consumer bumps to that version.
+- **Never vendor a dependency + `replace` it** in the consumer to sneak in an unreleased change — that forks the source of truth. (Lesson from herald NEX-475.)
+- A builder's git/gh creds are **org-wide, not repo-locked**, so this whole sequence can be **one dispatch**: clone the upstream repo, land + push the change, then clone the consumer and bump it — in the right order. The brief's `repo` field is just the primary / idempotency key; tell the builder to clone whatever else it needs. (Caveat: the fabric's per-ticket branch + PR-verification bookkeeping is single-repo-shaped today, so multi-repo *completion detection* is still rough — a refinement to make cross-repo dispatch first-class, not a reason to avoid it.)
