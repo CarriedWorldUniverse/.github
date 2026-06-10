@@ -67,7 +67,7 @@ Most public repos have CI matrices, tag-driven releases, branch-protected trunk 
 
 Aspects connect to nexus over WebSocket. Each one wraps `bridle` (which handles a single deliberation turn against any provider) inside a `funnel` (which owns the inbox, compaction, output filter, and observability). agora is the operator's seat at the same table — a thin client built on the same machinery.
 
-**Dispatch fabric.** Aspects run as on-demand cloud pods on a single-node k3s cluster, not host processes. An aspect can be *addressable but napping* — its identity and inbox persist; a mention wakes its pod in seconds and it naps again when quiet. Aspects spawn their own fresh-context worker "hands" (carrying the parent's persona, under a derived identity, fully audit-threaded) and report results back into chat without blocking the conversation.
+**Dispatch fabric.** Aspects run as on-demand cloud pods on a single-node k3s cluster, not host processes — dispatched work runs as a named agent in its own pod and reports back into an audited chat thread. In flight: *addressable-but-napping* presence (a mention wakes a sleeping aspect's pod in seconds; it naps again when quiet) and aspect-owned worker "hands" (fresh-context workers carrying the parent's persona under a derived identity, fully audit-threaded) so an aspect can fan work out without blocking the conversation.
 
 **CWB — the identity and authority plane.** Herald attests humans and agents; the pillars (Ledger for work/audit, Commonplace for knowledge, Cairn for git) run as standalone gRPC services over mTLS behind interchange as the public boundary gateway. A credential custodian brokers external secrets so agents act without raw credentials in model context. Casket provides the cross-language crypto root.
 
@@ -81,7 +81,7 @@ Aspects connect to nexus over WebSocket. Each one wraps `bridle` (which handles 
 
 ## Status
 
-Honest single-operator R&D — operational, moving fast, publicly readable, not a product. The running cluster is single-operator and tailnet-gated; the codebase is open. The agent runtime (broker, funnel, dispatch) and the CWB pillars (herald, ledger, commonplace, cairn) are deployed and meshed; credential custody, multi-agent deliberation, multi-operator support, and offsite-storage are in flight. Individual repos vary from tagged-and-stable to fast-moving — check each repo's own README for where it sits.
+Honest single-operator R&D — operational, moving fast, publicly readable, not a product. The running cluster is single-operator and tailnet-gated; the codebase is open. The agent runtime (broker, funnel, dispatch) and the CWB pillars (herald, ledger, commonplace, cairn) are deployed and meshed; napping presence, aspect-owned hands, credential custody, multi-agent deliberation, multi-operator support, and offsite storage are in flight. Individual repos vary from tagged-and-stable to fast-moving — check each repo's own README for where it sits.
 
 ## License
 
